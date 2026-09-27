@@ -1,0 +1,28 @@
+//stivers /leetcode - 88
+
+class Solution {
+public:
+    vector<int> unionArray(vector<int>& nums1, vector<int>& nums2) {
+        int n=nums1.size();
+        int v=nums2.size();
+        vector<int>result;
+        for(int i=0;i<n;i++){
+            result.push_back(nums1[i]);
+        }
+        for(int i=0;i<v;i++){
+            result.push_back(nums2[i]);
+        }
+        sort(result.begin(),result.end());
+        int m=result.size();
+        set<int>s;
+        for(int i=0;i<m;i++){
+            s.insert(result[i]);
+        }
+        result.clear();
+        for(auto x:s){
+            result.push_back(x);
+        }
+        return result;
+        
+    }
+};
