@@ -1,0 +1,16 @@
+//stivers
+
+class Solution {
+public:
+    void rotateArrayByOne(vector<int>& nums) {
+        int n=nums.size();
+        // reverse(nums.begin(),nums.begin()+1);
+        // reverse(nums.begin()+1,nums.end());
+        // reverse(nums.begin(),nums.end());
+        int temp=nums[0];
+        for(int i=0;i<n-1;i++){
+            nums[i]=nums[i+1];
+        }
+        nums[n-1]=temp;
+    }
+};
