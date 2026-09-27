@@ -1,0 +1,18 @@
+//stivers / leetcode - 169
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        unordered_map<int,int>mp;
+        int n=nums.size();
+        for(int x:nums){
+            mp[x]++;
+        }
+        for(auto v:mp){
+            if(v.second>n/2){
+                return v.first;
+            }
+        }
+        return {};
+    }
+};
